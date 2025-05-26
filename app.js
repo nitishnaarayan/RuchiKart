@@ -1,15 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const parent = React.createElement("div", { id: "parent" }, [
-	React.createElement("div", { id: "child" }, [
-		React.createElement("h1", {}, "This is H1"),
-		React.createElement("h2", {}, "This is H2"),
-	]),
-	React.createElement("div", { id: "parent" }, [
-		React.createElement("h2", {}, "this is h1 for p for div 2"),
-		React.createElement("h3", {}, "This is h3"),
-	]),
-]);
+const parent = (
+	<h1 className="heading " tabIndex="5">
+		This is Js 👌👌
+	</h1>
+);
+const Pat = () => (
+	<h1 className="hing " tabIndex="5">
+		This is Css❤️❤️
+	</h1>
+);
+
+const GrandParent = () => (
+	<div className="container">
+		{Pat()}
+		<Pat />
+		<Pat></Pat>
+
+		<h1 className="heading1">THis is Js</h1>
+	</div>
+);
 console.log(parent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<GrandParent />);
